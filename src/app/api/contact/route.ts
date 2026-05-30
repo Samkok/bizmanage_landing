@@ -25,7 +25,7 @@ export async function POST(request: Request) {
 
     // Get recipient email from environment variable, fallback to support email
     const recipientEmail =
-      process.env.CONTACT_EMAIL || "support@bizmanage.app";
+      process.env.CONTACT_EMAIL || "hengsamkok76@gmail.com";
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({

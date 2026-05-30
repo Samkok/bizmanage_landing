@@ -98,7 +98,7 @@ Create a `.env.local` file in the project root with the following variables:
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Contact form recipient email
-CONTACT_EMAIL=support@bizmanage.app
+CONTACT_EMAIL=hengsamkok76@gmail.com
 ```
 
 ### Setting Up Resend

@@ -136,7 +136,7 @@ const faqItems = [
   {
     question: "How do I get support?",
     answer:
-      "You can reach our support team through the contact form on this website or email us at support@bizmanage.app. We aim to respond within 3-5 business days. For urgent issues, please use the in-app support feature.",
+      "You can reach our support team through the contact form on this website or email us at hengsamkok76@gmail.com. We aim to respond within 3-5 business days. For urgent issues, please use the in-app support feature.",
   },
 ];
 
