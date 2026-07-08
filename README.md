@@ -107,18 +107,29 @@ CONTACT_EMAIL=hengsamkok76@gmail.com
 2. Get your API key from the [API Keys page](https://resend.com/api-keys)
 3. Add the API key to your `.env.local` file
 4. For production, update the `from` email address in `src/app/api/contact/route.ts` to use your verified domain
-5. Add environment variables to your hosting platform (Firebase, Vercel, etc.)
+5. Add environment variables to your Vercel project (see "Deploying to Vercel" below)
 
 **Note:** The default `from` address uses Resend's test domain. For production, you'll need to verify your own domain in Resend and update the `from` field in the API route.
 
-## Deploying to Firebase Hosting
+## Deploying to Vercel
 
-This repo is configured for Firebase's frameworks hosting, which automatically builds and serves the Next.js app (including the `/api/contact` route) via Firebase Hosting + Cloud Functions.
+This repo deploys to Vercel automatically: pushing to the `main` branch triggers a
+production deployment via Vercel's GitHub integration. Vercel auto-detects the Next.js
+App Router (including the `/api/contact` route and the dynamic `/refer/[code]` route) —
+no `vercel.json` or other config is required.
 
-1. Install the Firebase CLI globally if you haven't already: `npm i -g firebase-tools`.
-2. Authenticate: `firebase login`.
-3. Rename the default project in `.firebaserc` to your actual Firebase project ID or run `firebase use --add`.
-4. Build locally if you want to verify: `npm run build`.
-5. Deploy: `npm run deploy:firebase`.
+### Environment variables (Vercel dashboard)
 
-Firebase will detect the Next.js App Router setup using `firebase.json` and upload all necessary server and static assets. Update `firebase.json` if you need a different region or multiple sites. Any future environment variables should be managed via `firebase functions:config:set` or the Firebase console before redeploying.
+`.env.local` is gitignored, so it is **not** pushed to GitHub and its values do not reach
+Vercel. Set the environment variables you need under **Project Settings → Environment
+Variables** (for the Production, Preview, and Development scopes as appropriate):
+
+| Variable | Required? | Notes |
+| --- | --- | --- |
+| `RESEND_API_KEY` | **Required** for the contact form | Secret. Without it, `POST /api/contact` cannot send email. |
+| `CONTACT_EMAIL` | Optional | Recipient for contact submissions. Defaults to `hengsamkok76@gmail.com`. |
+| `NEXT_PUBLIC_SUPABASE_URL` | Optional | Supabase project URL for referral-click tracking. The referral page falls back to a baked-in public default, so this is only needed to override it. |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Optional | Supabase anon (publishable) key. Public by design; also has a baked-in default. |
+
+After changing environment variables in Vercel, redeploy (or push a new commit) so the
+build picks them up — `NEXT_PUBLIC_*` values are inlined at build time.

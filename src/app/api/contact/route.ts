@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
@@ -22,6 +20,23 @@ export async function POST(request: Request) {
         { status: 400 },
       );
     }
+
+    // Instantiate the Resend client lazily inside the handler. Doing it at
+    // module scope throws at build time when RESEND_API_KEY is unset, which
+    // fails the entire Vercel build (not just this route). Here a missing key
+    // degrades to a clean 500 instead.
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("RESEND_API_KEY is not set — cannot send contact email.");
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Email service is not configured. Please try again later.",
+        },
+        { status: 500 },
+      );
+    }
+    const resend = new Resend(apiKey);
 
     // Get recipient email from environment variable, fallback to support email
     const recipientEmail =
