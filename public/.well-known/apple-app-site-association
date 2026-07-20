@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["J57YQ6F7J9.com.businessmanager.pro"],
+        "components": [
+          {
+            "/": "/refer/*",
+            "comment": "Referral invite links open directly in the BizManage app"
+          }
+        ]
+      }
+    ]
+  }
+}

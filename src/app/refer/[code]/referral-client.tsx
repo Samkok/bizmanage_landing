@@ -171,9 +171,11 @@ export function ReferralClient({ code }: { code: string }) {
           <h1 className="mt-5 text-center text-2xl font-bold leading-tight text-slate-900 sm:text-[28px]">
             You&apos;ve been invited to BizManage!
           </h1>
+          {/* Kept deliberately free of a specific reward promise until referral
+              redemption is wired up on the backend (remediation B8 / A4.1). */}
           <p className="mx-auto mt-3 max-w-sm text-center text-[15px] leading-relaxed text-slate-600">
-            Download BizManage and use this referral code when you sign up. Both
-            you and your friend will earn bonus credits!
+            Download BizManage and enter this referral code when you sign up, so
+            your friend gets credit for the invite.
           </p>
 
           {/* Referral code */}

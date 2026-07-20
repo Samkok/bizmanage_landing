@@ -18,7 +18,9 @@ export async function generateMetadata({
   const referralCode = normalizeCode(code);
 
   const title = "You've been invited to BizManage";
-  const description = `Use referral code ${referralCode} when you sign up for BizManage — you'll both earn bonus credits.`;
+  // No specific reward promise here — this string is the share/OG preview shown
+  // in messaging apps, so it must match what the backend actually grants (B8).
+  const description = `Use referral code ${referralCode} when you sign up for BizManage, so your friend gets credit for the invite.`;
 
   return {
     title,

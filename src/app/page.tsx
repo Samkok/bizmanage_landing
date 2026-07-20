@@ -198,23 +198,21 @@ export default function Home() {
                 <span aria-hidden="true"></span>
                 Download on App Store
               </a>
-              <a
-                href="https://play.google.com/store/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-3 rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-900"
-              >
+              {/* Android isn't published yet, so this is intentionally not a
+                  link — a CTA that dead-ends on the Play homepage costs trust. */}
+              <span className="inline-flex cursor-default items-center gap-3 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-3 text-sm font-semibold text-slate-500">
                 <svg
                   aria-hidden="true"
                   width="18"
                   height="18"
                   viewBox="0 0 24 24"
                   fill="currentColor"
+                  className="opacity-60"
                 >
                   <path d="M3 2l12.5 10L3 22V2zm13.6 10.3l3.4-2.1c1.5-.9 1.5-3.1 0-4l-3.4-2.1-4.6 4.1 4.6 4.1zm0 0l-4.6 4.1 4.6 2.9 3.4-2.1c1.5-.9 1.5-3.1 0-4l-3.4-.9z" />
                 </svg>
-                Get it on Google Play
-              </a>
+                Android — coming soon
+              </span>
             </div>
             <div className="mt-10 grid gap-4 text-sm text-slate-600 sm:grid-cols-2">
               <div className="rounded-2xl border border-slate-200 bg-white p-4">
