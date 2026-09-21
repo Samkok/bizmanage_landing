@@ -79,7 +79,7 @@ const faqItems = [
   {
     question: "Is BizManage free to use?",
     answer:
-      "BizManage offers a free trial that includes your first 10 sales transactions. After reaching this limit, if you wish to continue using the app, a paid subscription plan will be required. This allows you to experience the full functionality before committing to a subscription.",
+      "BizManage is free to use for your first 50 sales transactions. After reaching this limit, if you wish to continue using the app, a paid subscription plan will be required. This lets you experience the full functionality before committing to a subscription.",
   },
   {
     question: "Can I use BizManage for multiple businesses?",
@@ -131,12 +131,12 @@ const faqItems = [
   {
     question: "Is there a desktop version?",
     answer:
-      "BizManage is currently optimized for mobile devices (iOS and Android). The app is designed to work seamlessly on phones and tablets, giving you full control of your business operations on the go.",
+      "There's no desktop version yet. BizManage is currently a mobile app available on iOS (iPhone and iPad), with Android coming soon. It's designed to work seamlessly on your phone or tablet, giving you full control of your business operations on the go.",
   },
   {
     question: "How do I get support?",
     answer:
-      "You can reach our support team through the contact form on this website or email us at hengsamkok76@gmail.com. We aim to respond within 3-5 business days. For urgent issues, please use the in-app support feature.",
+      "You can reach our support team through the contact form on this website or email us at hengsamkok76@gmail.com. We aim to respond within 3–5 business days. For urgent issues, please use the in-app support feature.",
   },
 ];
 
@@ -190,7 +190,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="https://apps.apple.com/us/app/business-manager-pro-a11c2c/id6747810928"
+                href="https://apps.apple.com/kh/app/bizmanage/id6747810928"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-3 rounded-2xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5 hover:bg-slate-800"

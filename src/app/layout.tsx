@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://bizmanage.app";
+const siteUrl = "https://bizmanage.xtremon.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

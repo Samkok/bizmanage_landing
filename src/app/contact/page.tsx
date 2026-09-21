@@ -16,7 +16,7 @@ export default function ContactPage() {
         <h1 className="mt-3 text-4xl font-bold text-slate-900">Send us a message</h1>
         <p className="mt-4 text-base text-slate-600">
           Questions about BizManage? Share a bit about your business and we’ll
-          get back within one business day.
+          get back within 3–5 business days.
         </p>
 
         <ContactForm />
